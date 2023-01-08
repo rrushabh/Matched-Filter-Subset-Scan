@@ -101,7 +101,7 @@ class Node:
             return self.right
         
     def traverse(self, subset, weights):
-        while (self.theta is None): # traverse the tree until we hit a leaf node
+        if self.theta is None: # traverse the tree until we hit a leaf node
             return self.choose_branch(subset, weights).traverse(subset, weights)
 
         print("Searching node",self.name,"with",self.num_filters,"filters")
