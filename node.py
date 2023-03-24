@@ -93,7 +93,7 @@ class Node:
         #calculate minimum expected distance to average filter
         ex_distance_left = left_avg - math.sqrt(2*left_var*np.log(self.left.num_filters))
         ex_distance_right = right_avg - math.sqrt(2*right_var*np.log(self.right.num_filters))
-        print("Comparing",self.left.name,"(distance",ex_distance_left,") and",self.right.name,"(distance",ex_distance_right,")")
+        # print("Comparing",self.left.name,"(distance",ex_distance_left,") and",self.right.name,"(distance",ex_distance_right,")")
 
         if ex_distance_left <= ex_distance_right:
             return self.left
@@ -104,7 +104,7 @@ class Node:
         if self.theta is None: # traverse the tree until we hit a leaf node
             return self.choose_branch(subset, weights).traverse(subset, weights)
 
-        print("Searching node",self.name,"with",self.num_filters,"filters")
+        # print("Searching node",self.name,"with",self.num_filters,"filters")
         #print(self.theta)
             
         temp_min = 1000000000
